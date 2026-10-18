@@ -1,0 +1,18 @@
+{
+  "name": "Institución Etnoeducativa de Sidón",
+  "short_name": "I.E. Sidón",
+  "description": "Portal oficial de la Institución Etnoeducativa de Sidón - Cumbitara, Nariño. Educación, paz y progreso.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#15613c",
+  "theme_color": "#15613c",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "imagenes/escudo3.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+iframe {
+    display: block; /* Convierte el iframe en un elemento de bloque */
+    width: 90%; /* Ancho del iframe (puedes ajustarlo) */
+    height: 1000px; /* Alto del iframe (puedes ajustarlo) */
+    margin: 0 auto; /* Centrar horizontalmente */
+    margin-top: 80px;
+  }

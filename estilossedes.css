@@ -1,0 +1,162 @@
+nav {
+   
+  background:  linear-gradient(to bottom, rgba(232, 232, 238, 0.3), rgba(21, 96, 165, 0.518)); 
+   
+  padding: 0.2rem 0.3rem; /* Ajuste de padding */
+  position: fixed; /* Fija el nav en la parte superior */
+   /* top: 0; /*Lo coloca en la parte superior */  
+  bottom: 0;
+  right: 0; /* Lo alinea a la izquierda */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+ /*  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */ */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+}
+
+nav h3 {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 0.1rem;
+  margin: 0;
+}
+
+nav a {
+  color: rgba(1, 10, 6, 0.605);
+  text-decoration:wavy;
+  padding: 0.5rem 1rem;
+  margin: 0 0.1rem;
+  position: relative;
+  transition: all 0.3s ease;
+  font-weight: 700; /* Texto un poco más grueso */
+ 
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background-color: #c50b0ba4; /* Línea verde al hacer hover */
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%; /* Línea verde se expande */
+}
+
+nav a:hover {
+  color: #2ad443; /* Cambio de color al hacer hover */
+}
+
+/* Estilos del menú desplegable */
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  background: rgba(41, 3, 178, 0.7); /* Fondo semi-transparente */
+  min-width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 4px; /* Bordes redondeados */
+  overflow: hidden; /* Para que los bordes redondeados funcionen */
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  margin: 0;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(0, 102, 204, 0.7); /* Fondo al hacer hover */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+.menu-sedes {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    overflow-y: auto;
+    background-color:  rgba(57, 54, 154, 0.9);
+    padding: 20px;
+    
+  }
+  
+  .menu-sedes ul {
+    list-style: none;
+    padding: 0;
+    
+  }
+  
+  .menu-sedes li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #ededf4ea;
+    transition: width 0.3s ease;
+  }
+  
+  section {
+   /*  margin-top: 10px */
+    margin-left: 420px;
+    padding: 20px;
+  }
+
+  .men1  {
+    top: 40px ;
+    margin-right: 300;
+ 
+   }
+
+ h6 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 0.1rem;
+    margin: 0;
+    font-size: 1.4rem;
+  
+  }
+
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+h2 {
+    color: #0066cc;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+.sede {
+    /* margin-left: 400px; */
+    margin-bottom: 20px;
+}
+.sede p {
+    margin: 5px 0;
+}

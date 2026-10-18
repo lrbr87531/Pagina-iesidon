@@ -1,0 +1,359 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Estilos del header */
+header {
+    width: 100%;
+    height: 350px; /* Altura fija del header */
+    background: #03721b; /* Fondo sólido */
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    text-align: center;
+    background: linear-gradient(to bottom, hsla(244, 89%, 48%, 0) 0%, rgba(135, 136, 214, 0.2) 100%);
+    text-shadow: 2px 2px 4px rgb(228, 237, 239);
+    flex: 1;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    color: #071395a7; /* Verde brillante */
+}
+
+/* Estilos del carrusel */
+.carousel {
+    position: absolute; /* Posiciona el carrusel dentro del header */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* Asegura que el carrusel esté detrás del título */
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0; /* Evita que los elementos se reduzcan */
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover; /* Asegura que las imágenes cubran el contenedor */
+}
+
+/* Efecto traslúcido azul degradado sobre cada contenedor */
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 255, 0.5), rgba(0, 128, 255, 0.5)); /* Azul degradado */
+    z-index: 1; /* Asegura que esté sobre las imágenes */
+    pointer-events: none; /* Permite interactuar con los controles */
+}
+
+/* Flechas de navegación */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10; /* Asegura que esté sobre el efecto traslúcido */
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilos del nav */
+nav {
+   
+    background: transparent;/* linear-gradient(to bottom, rgba(26, 8, 224, 0.3), rgba(6, 48, 88, 0.518)); */
+    
+    padding: 0.2rem 0.3rem; /* Ajuste de padding */
+    position: absolute; /* Fija el nav en la parte superior */
+    /* top: 0; /* Lo coloca en la parte superior */ 
+    /* bottom: 0; */
+    left: 0; /* Lo alinea a la izquierda */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+   /*  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */ 
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+    animation: fadeIn 2.5s ease-in-out;
+
+  
+    /* flex-wrap: wrap;   */
+    /* overflow-wrap: anywhere;  */
+}
+
+nav h3 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 0.1rem;
+    margin: 0;
+}
+
+nav a {
+    color: rgba(246, 232, 240, 0.941);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.1rem;
+    position: relative;
+    transition: all 0.3s ease;
+    font-weight: 700; /* Texto un poco más grueso */
+   
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #2ad443; /* Línea verde al hacer hover */
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%; /* Línea verde se expande */
+}
+
+nav a:hover {
+    color: #2ad443; /* Cambio de color al hacer hover */
+}
+
+/* Estilos del menú desplegable */
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(41, 3, 178, 0.7); /* Fondo semi-transparente */
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 4px; /* Bordes redondeados */
+    overflow: hidden; /* Para que los bordes redondeados funcionen */
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    margin: 0;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 102, 204, 0.7); /* Fondo al hacer hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Ajustar el margen superior del contenido para evitar superposición */
+.content {
+    margin-top: 100px; /* Ajusta este valor según la altura del nav */
+    max-width: 1200px;
+    padding: 0 1rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+
+/* Estilos del hero */
+.hero {
+    height: 400px;
+    background: linear-gradient(rgba(22, 6, 167, 0.858), rgba(22, 74, 171, 0.5)), url('/api/placeholder/1200/400');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h1 {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(10);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Estilos del contenido principal */
+.content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.feature-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(90, 10, 160, 0.32);
+    text-align: center;
+    animation: slideUp 0.8s ease-in-out;
+    animation-fill-mode: both;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.feature-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.feature-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#presentacion {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .header-image {
+        width: 100px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .dropdown-content {
+        position: relative;
+        width: 100%;
+    }
+}
