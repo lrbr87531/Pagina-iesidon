@@ -1,0 +1,857 @@
+/* ==========================================================================
+   INSTITUCIÓN ETNOEDUCATIVA DE SIDÓN - ESTILOS ESPECÍFICOS DE PÁGINAS Y COMPONENTES
+   ========================================================================== */
+
+/* ==========================================================================
+   SEDES: BUSCADOR, FILTROS Y TARJETAS DETALLADAS
+   ========================================================================== */
+.sedes-toolbar {
+  background-color: var(--color-white);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-slate-200);
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sedes-search-box {
+  position: relative;
+  width: 100%;
+}
+
+.sedes-search-input {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.85rem;
+  font-size: 1rem;
+  border: 1.5px solid var(--color-slate-300);
+  border-radius: var(--radius-md);
+  background-color: var(--color-slate-50);
+  transition: all var(--transition-fast);
+}
+
+.sedes-search-input:focus {
+  background-color: var(--color-white);
+  border-color: var(--color-green-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(21, 97, 60, 0.15);
+}
+
+.sedes-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-slate-400);
+  pointer-events: none;
+}
+
+.sedes-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.filter-btn {
+  background-color: var(--color-slate-100);
+  border: 1px solid var(--color-slate-200);
+  padding: 0.45rem 0.95rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  color: var(--color-slate-700);
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  background-color: var(--color-slate-200);
+  color: var(--color-slate-900);
+}
+
+.filter-btn.active {
+  background-color: var(--color-green-primary);
+  color: var(--color-white);
+  border-color: var(--color-green-primary);
+}
+
+.sedes-count-badge {
+  font-size: 0.875rem;
+  color: var(--color-slate-600);
+  font-weight: 500;
+  margin-left: auto;
+}
+
+/* Tarjeta individual de sede */
+.sede-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-slate-200);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast);
+}
+
+.sede-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-slate-300);
+}
+
+.sede-card-header {
+  position: relative;
+  height: 200px;
+  background-color: var(--color-slate-200);
+  overflow: hidden;
+}
+
+.sede-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.sede-card:hover .sede-card-img {
+  transform: scale(1.05);
+}
+
+.sede-badge-number {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(4px);
+  color: var(--color-white);
+  font-size: 0.775rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sede-card-body {
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.sede-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-slate-900);
+  margin-bottom: 0.35rem;
+}
+
+.sede-vereda {
+  font-size: 0.85rem;
+  color: var(--color-slate-500);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.sede-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  font-size: 0.875rem;
+}
+
+.sede-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
+  color: var(--color-slate-700);
+}
+
+.sede-feature-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.sede-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--color-slate-100);
+}
+
+.pill-badge {
+  font-size: 0.725rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.pill-success {
+  background-color: var(--color-green-subtle);
+  color: var(--color-green-dark);
+}
+
+.pill-warning {
+  background-color: var(--color-gold-light);
+  color: var(--color-earth);
+}
+
+.pill-info {
+  background-color: var(--color-blue-subtle);
+  color: var(--color-blue-dark);
+}
+
+.pill-neutral {
+  background-color: var(--color-slate-100);
+  color: var(--color-slate-600);
+}
+
+/* ==========================================================================
+   HIMNO INSTITUCIONAL
+   ========================================================================== */
+.anthem-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-slate-200);
+  box-shadow: var(--shadow-md);
+  padding: 2.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.anthem-card::before {
+  content: '♫';
+  font-size: 4rem;
+  color: var(--color-gold-light);
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.anthem-header {
+  margin-bottom: 2rem;
+}
+
+.anthem-title {
+  font-size: 1.85rem;
+  color: var(--color-green-dark);
+  margin-bottom: 0.5rem;
+}
+
+.anthem-stanza {
+  margin-bottom: 1.75rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-slate-700);
+  font-family: var(--font-serif);
+}
+
+.anthem-chorus {
+  background: var(--color-gold-subtle);
+  padding: 1.25rem 1.75rem;
+  border-radius: var(--radius-md);
+  margin: 1.75rem auto;
+  border: 1.5px dashed var(--color-gold-primary);
+  font-weight: 700;
+  color: var(--color-earth);
+  max-width: 550px;
+}
+
+.anthem-label {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-green-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   SÍMBOLOS INSTITUCIONALES (BANDERA, ESCUDO, LEMA)
+   ========================================================================== */
+.symbol-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+.symbol-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-slate-200);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.symbol-media {
+  background-color: var(--color-slate-50);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--color-slate-100);
+}
+
+.symbol-media img {
+  max-height: 180px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+.symbol-explanation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.symbol-explanation-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-slate-100);
+  font-size: 0.925rem;
+  line-height: 1.55;
+}
+
+.symbol-explanation-item:last-child {
+  border-bottom: none;
+}
+
+.symbol-color-bullet {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.color-white-bullet { background: #ffffff; border: 1.5px solid #cbd5e1; }
+.color-blue-bullet { background: #195383; }
+.color-green-bullet { background: #15613c; }
+
+/* ==========================================================================
+   MEDICINA TRADICIONAL Y SABERES ANCESTRALES
+   ========================================================================== */
+.plants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.plant-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-green-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+  border-left: 3px solid var(--color-green-primary);
+}
+
+.plant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  background-color: var(--color-green-subtle);
+}
+
+.plant-name {
+  font-weight: 700;
+  color: var(--color-green-dark);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.plant-desc {
+  font-size: 0.8125rem;
+  color: var(--color-slate-600);
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   PROYECTOS STEAM Y ROBÓTICA
+   ========================================================================== */
+.steam-sessions-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.steam-session-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-slate-200);
+  box-shadow: var(--shadow-sm);
+  padding: 1.75rem;
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  transition: all var(--transition-fast);
+}
+
+.steam-session-card:hover {
+  border-color: var(--color-blue-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+
+.steam-badge-session {
+  background: linear-gradient(135deg, var(--color-blue-primary), var(--color-blue-dark));
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+  width: 72px;
+  height: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.steam-badge-session span:first-child {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+}
+
+.steam-badge-session span:last-child {
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+
+.steam-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 720px) {
+  .steam-session-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* ==========================================================================
+   GALERÍA MULTIMEDIA Y LIGHTBOX ACCESIBLE
+   ========================================================================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+  background-color: var(--color-slate-200);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.25rem 1rem 0.75rem;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, transparent 100%);
+  color: var(--color-white);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transform: translateY(100%);
+  transition: transform var(--transition-fast);
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus .gallery-caption-overlay {
+  transform: translateY(0);
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-fast);
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+}
+
+.lightbox-caption {
+  color: var(--color-white);
+  margin-top: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.lightbox-btn-prev, .lightbox-btn-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: var(--color-white);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.lightbox-btn-prev:hover, .lightbox-btn-next:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-btn-prev { left: -60px; }
+.lightbox-btn-next { right: -60px; }
+
+@media (max-width: 768px) {
+  .lightbox-btn-prev { left: 10px; }
+  .lightbox-btn-next { right: 10px; }
+}
+
+/* ==========================================================================
+   DOCUMENTOS INSTITUCIONALES DESCARGABLES
+   ========================================================================== */
+.doc-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-slate-200);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: all var(--transition-fast);
+}
+
+.doc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-slate-300);
+}
+
+.doc-icon-badge {
+  background: var(--color-blue-subtle);
+  color: var(--color-blue-primary);
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.doc-icon-pdf {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.doc-meta {
+  font-size: 0.8125rem;
+  color: var(--color-slate-500);
+  margin-bottom: 0.75rem;
+  display: flex;
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   FORMULARIO DE CONTACTO ACCESIBLE
+   ========================================================================== */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (max-width: 880px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-card-info {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-slate-200);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-item-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: var(--color-green-subtle);
+  color: var(--color-green-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-slate-800);
+  margin-bottom: 0.4rem;
+}
+
+.form-label span.required {
+  color: var(--color-danger);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--color-slate-300);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  background-color: var(--color-slate-50);
+  transition: all var(--transition-fast);
+}
+
+.form-control:focus {
+  background-color: var(--color-white);
+  border-color: var(--color-green-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(21, 97, 60, 0.15);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-feedback {
+  display: none;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  margin-top: 1rem;
+  font-size: 0.925rem;
+}
+
+.form-feedback.success {
+  display: block;
+  background-color: var(--color-green-subtle);
+  color: var(--color-green-dark);
+  border: 1px solid var(--color-green-primary);
+}
+
+
+/* ==========================================================================
+   MODAL INTERACTIVO DE DETALLES DE SEDE
+   ========================================================================== */
+.sede-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-fast);
+}
+
+.sede-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sede-modal-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  max-width: 620px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  border: 1px solid var(--color-slate-200);
+}
+
+.sede-modal-header {
+  position: relative;
+  height: 240px;
+  background: var(--color-slate-800);
+}
+
+.sede-modal-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sede-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(15, 23, 42, 0.75);
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  z-index: 10;
+}
+
+.sede-modal-close:hover {
+  background: rgba(220, 38, 38, 0.9);
+}
+
+.sede-modal-body {
+  padding: 1.75rem;
+}
+
+.sede-modal-title {
+  font-size: 1.5rem;
+  color: var(--color-slate-900);
+  margin-bottom: 0.25rem;
+}
+
+.sede-modal-location {
+  font-size: 0.925rem;
+  color: var(--color-green-primary);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.sede-modal-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-slate-800);
+  margin: 1.25rem 0 0.5rem;
+}
+
+.btn-view-sede {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  background: var(--color-green-subtle);
+  color: var(--color-green-dark);
+  border: 1px solid var(--color-green-primary);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-view-sede:hover {
+  background: var(--color-green-primary);
+  color: var(--color-white);
+}
